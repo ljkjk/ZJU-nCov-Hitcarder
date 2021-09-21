@@ -9,6 +9,7 @@ import datetime
 import os
 import sys
 import message
+import random
 
 
 class HitCarder(object):
@@ -221,6 +222,10 @@ if __name__ == "__main__":
     username = os.environ['USERNAME']
     password = os.environ['PASSWORD']
 
+    delay_t = random.randint(0, 300)
+    print('start in %ds' % delay_t)
+    time.sleep(delay_t) # delay
+    
     ret, msg = main(username, password)
     print(ret, msg)
     if ret == 1:
