@@ -1,6 +1,7 @@
 import requests
 import json
 import os
+import datetime
 
 def dingtalk(msg, dingtalk_token):
     dingtalk_url = 'https://oapi.dingtalk.com/robot/send?access_token='+dingtalk_token
@@ -45,7 +46,7 @@ def serverchan(text, desp, serverchan_key):
 
 
 if __name__ == "__main__":
-    msg = "打卡"*1000
+    msg = str(datetime.datetime.now()) + ' 打卡'
     dingtalk_token = os.environ.get('DINGTALK_TOKEN')
     if dingtalk_token:
         ret = dingtalk(msg, dingtalk_token)
