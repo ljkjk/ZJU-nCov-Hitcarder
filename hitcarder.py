@@ -93,7 +93,7 @@ class HitCarder(object):
         print('----------------------------------------')
         
         with open("form.txt", "r", encoding="utf-8") as f:
-            old_form = f.read()
+            old_form = f.read().strip('\n')
             
         print('----------------OLD FORM----------------')
         print(old_form)
