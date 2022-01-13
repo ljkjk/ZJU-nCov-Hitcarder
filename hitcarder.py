@@ -93,8 +93,14 @@ class HitCarder(object):
         print('----------------------------------------')
         
         with open("form.txt", "r", encoding="utf-8") as f:
-            if new_form == f.read():
-                return True
+            old_form = f.read()
+            
+        print('----------------OLD FORM----------------')
+        print(old_form)
+        print('----------------------------------------')  
+        
+        if new_form == old_form:
+            return True
         return False
 
     def get_info(self, html=None):
